@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<title>MOZART Insta + YT Handler</title>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link rel="stylesheet" href="/static/style.css" />
+</head>
+<body>
+
+<header class="topbar">
+  <div class="brand">
+    <span class="logo">▶</span>
+    <span>MOZART Multi-Platform Handler</span>
+  </div>
+  <nav>
+    <button class="tab active" data-view="dashboard">Dashboard</button>
+    <button class="tab" data-view="history">History</button>
+    <button class="tab" data-view="settings">Brands &amp; Accounts</button>
+  </nav>
+</header>
+
+<!-- ========== DASHBOARD ========== -->
+<main id="view-dashboard" class="view">
+  <aside class="sidebar">
+    <div class="sidebar-title">Your Brands</div>
+    <ul id="brand-list" class="page-list"></ul>
+    <div id="no-brands-hint" class="hint" style="display:none">
+      Add a brand in <b>Brands &amp; Accounts</b> to begin.
+    </div>
+  </aside>
+
+  <section class="content">
+    <div class="content-header">
+      <div>
+        <h2 id="current-brand-name">Select a brand</h2>
+        <div class="muted" id="current-brand-meta"></div>
+      </div>
+      <div class="content-actions">
+        <button id="btn-post-all" class="primary" disabled>Post all drafts</button>
+      </div>
+    </div>
+
+    <div id="dropzone" class="dropzone" tabindex="0">
+      <div class="dropzone-inner">
+        <div class="big">⬇</div>
+        <div><b>Drop videos here</b> or click to choose files</div>
+        <div class="muted">MP4 / MOV / M4V · vertical 9:16 · &lt;60s for best Shorts results</div>
+        <input type="file" id="file-input" multiple accept=".mp4,.mov,.m4v" hidden />
+      </div>
+    </div>
+
+    <div class="queue-section">
+      <div class="section-title">Queue</div>
+      <div id="job-list" class="job-list">
+        <div class="empty muted">No videos uploaded yet for this brand.</div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<!-- ========== HISTORY ========== -->
+<main id="view-history" class="view hidden">
+  <div class="content full">
+    <h2>Post History</h2>
+    <table class="history-table">
+      <thead>
+        <tr>
+          <th>When</th><th>Brand</th><th>File</th><th>Caption</th>
+          <th>IG</th><th>YT</th><th>Status</th>
+        </tr>
+      </thead>
+      <tbody id="history-body">
+        <tr><td colspan="7" class="muted">No posts yet.</td></tr>
+      </tbody>
+    </table>
+  </div>
+</main>
+
+<!-- ========== SETTINGS ========== -->
+<main id="view-settings" class="view hidden">
+  <div class="content full">
+    <h2>Brands &amp; Accounts</h2>
+    <p class="muted">A <b>brand</b> bundles your Instagram + YouTube together so one upload posts to both. You can leave either side empty if a brand is single-platform.</p>
+
+    <div id="brands-list" class="accounts-list"></div>
+    <button id="btn-add-brand" class="primary" style="margin-top:16px">+ Add brand</button>
+
+    <div id="brand-editor" class="account-editor hidden">
+      <h3 id="editor-title">Add brand</h3>
+      <input type="hidden" id="ed-id" />
+      <label>Brand name <input id="ed-name" placeholder="e.g. Mozart India" /></label>
+      <div class="grid-2">
+        <label>Niche
+          <select id="ed-niche">
+            <option>fitness</option><option>food</option><option>fashion</option>
+            <option>beauty</option><option>travel</option><option>tech</option>
+            <option>comedy</option><option>motivation</option><option>education</option>
+            <option>music</option><option>default</option>
+          </select>
+        </label>
+        <label>Caption style
+          <select id="ed-style">
+            <option>energetic</option><option>friendly</option><option>trendy</option>
+            <option>funny</option><option>informative</option><option>inspirational</option>
+          </select>
+        </label>
+      </div>
+      <label>Call to action <input id="ed-cta" placeholder="Follow @yourbrand for daily content!" /></label>
+      <label>Hashtag count (Instagram)
+        <input id="ed-tags" type="number" min="5" max="30" value="25" />
+      </label>
+
+      <div class="platform-section">
+        <h4><span class="pill ig">Instagram</span></h4>
+        <div class="grid-2">
+          <label>IG Business Account ID
+            <input id="ed-ig-id" placeholder="17841..." />
+          </label>
+          <label>Long-lived access token <span id="ed-ig-tok-prev" class="muted"></span>
+            <input id="ed-ig-token" placeholder="Leave blank to keep existing" />
+          </label>
+        </div>
+      </div>
+
+      <div class="platform-section">
+        <h4><span class="pill yt">YouTube</span> <span id="yt-status" class="muted"></span></h4>
+        <p class="muted small">Paste your OAuth client ID + secret from Google Cloud, then click <b>Connect YouTube</b> to grant upload permission. See <code>YOUTUBE_SETUP.md</code> for the one-time Google Cloud setup.</p>
+        <div class="grid-2">
+          <label>OAuth Client ID
+            <input id="ed-yt-cid" placeholder="...apps.googleusercontent.com" />
+          </label>
+          <label>OAuth Client Secret <span id="ed-yt-sec-prev" class="muted"></span>
+            <input id="ed-yt-secret" placeholder="Leave blank to keep existing" />
+          </label>
+        </div>
+        <div class="yt-actions">
+          <button id="btn-yt-connect" class="ghost">Connect YouTube →</button>
+          <button id="btn-yt-disconnect" class="danger" style="display:none">Disconnect YouTube</button>
+        </div>
+      </div>
+
+      <div class="editor-actions">
+        <button class="ghost" id="ed-cancel">Cancel</button>
+        <button class="danger" id="ed-delete" style="display:none">Delete this brand</button>
+        <button class="primary" id="ed-save">Save brand</button>
+      </div>
+    </div>
+  </div>
+</main>
+
+<script src="/static/app.js"></script>
+</body>
+</html>

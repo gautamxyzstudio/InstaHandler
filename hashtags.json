@@ -1,0 +1,80 @@
+{
+  "_comment": "Trending hashtag bank by niche. Tool mixes high-volume + mid-volume + niche tags for best reach. Update tags monthly to keep them fresh.",
+
+  "fitness": {
+    "trending": ["#fitness", "#fitnessmotivation", "#workout", "#gym", "#gymmotivation", "#bodybuilding", "#fitlife", "#fitfam"],
+    "mid": ["#homeworkout", "#fitnessjourney", "#strengthtraining", "#gymlife", "#trainhard", "#noexcuses", "#sweat", "#cardio"],
+    "niche": ["#fitnessreels", "#workoutreels", "#gymreels", "#fitnessindia", "#desifitness", "#fitover30", "#calisthenics", "#fitnesstips"],
+    "viral": ["#viral", "#reels", "#trending", "#explore", "#explorepage", "#reelsviral", "#instareels", "#viralreels"]
+  },
+
+  "food": {
+    "trending": ["#food", "#foodie", "#foodporn", "#instafood", "#foodphotography", "#yummy", "#delicious", "#foodlover"],
+    "mid": ["#homecooking", "#recipe", "#easyrecipe", "#cooking", "#chef", "#foodblogger", "#healthyfood", "#streetfood"],
+    "niche": ["#foodreels", "#reciperreels", "#indianfood", "#desifood", "#asmrfood", "#cookingreels", "#snackideas", "#breakfastideas"],
+    "viral": ["#viral", "#reels", "#trending", "#explore", "#explorepage", "#reelsviral", "#instareels", "#viralreels"]
+  },
+
+  "fashion": {
+    "trending": ["#fashion", "#style", "#ootd", "#fashionista", "#outfit", "#fashionblogger", "#fashionstyle", "#stylish"],
+    "mid": ["#fashioninspo", "#outfitinspo", "#streetstyle", "#luxuryfashion", "#sustainablefashion", "#trendy", "#lookbook", "#styleblogger"],
+    "niche": ["#fashionreels", "#outfitreels", "#stylereels", "#indianfashion", "#desifashion", "#mensfashion", "#womensfashion", "#fashiontips"],
+    "viral": ["#viral", "#reels", "#trending", "#explore", "#explorepage", "#reelsviral", "#instareels", "#viralreels"]
+  },
+
+  "beauty": {
+    "trending": ["#beauty", "#makeup", "#skincare", "#mua", "#beautyblogger", "#makeupartist", "#glam", "#cosmetics"],
+    "mid": ["#makeuptutorial", "#skincareroutine", "#beautytips", "#naturalmakeup", "#makeuplover", "#glowup", "#skincareaddict", "#makeupreels"],
+    "niche": ["#beautyreels", "#makeupreels", "#skincarereels", "#indianbeauty", "#desibeauty", "#hairstyle", "#nailart", "#beautyhacks"],
+    "viral": ["#viral", "#reels", "#trending", "#explore", "#explorepage", "#reelsviral", "#instareels", "#viralreels"]
+  },
+
+  "travel": {
+    "trending": ["#travel", "#travelgram", "#wanderlust", "#instatravel", "#traveler", "#traveling", "#travelphotography", "#vacation"],
+    "mid": ["#travelblogger", "#explore", "#adventure", "#travelreels", "#solotravel", "#wanderer", "#travellife", "#beautifuldestinations"],
+    "niche": ["#travelreels", "#travelindia", "#desitravel", "#budgettravel", "#hiddengems", "#travelguide", "#travelvlog", "#wanderlustreels"],
+    "viral": ["#viral", "#reels", "#trending", "#explore", "#explorepage", "#reelsviral", "#instareels", "#viralreels"]
+  },
+
+  "tech": {
+    "trending": ["#tech", "#technology", "#gadgets", "#techreview", "#smartphone", "#apple", "#android", "#innovation"],
+    "mid": ["#techie", "#geek", "#techlife", "#newtech", "#gadgetreview", "#unboxing", "#techtips", "#programming"],
+    "niche": ["#techreels", "#gadgetreels", "#techindia", "#aiinaction", "#chatgpt", "#aitools", "#coding", "#productivity"],
+    "viral": ["#viral", "#reels", "#trending", "#explore", "#explorepage", "#reelsviral", "#instareels", "#viralreels"]
+  },
+
+  "comedy": {
+    "trending": ["#comedy", "#funny", "#memes", "#humor", "#lol", "#funnyvideos", "#comedyreels", "#standupcomedy"],
+    "mid": ["#funnyreels", "#hilarious", "#joke", "#dailymemes", "#meme", "#comedyclub", "#satire", "#funnymoments"],
+    "niche": ["#desimemes", "#indianmemes", "#funnyindia", "#comedyindia", "#reactionvideo", "#prank", "#skits", "#sketchcomedy"],
+    "viral": ["#viral", "#reels", "#trending", "#explore", "#explorepage", "#reelsviral", "#instareels", "#viralreels"]
+  },
+
+  "motivation": {
+    "trending": ["#motivation", "#inspiration", "#mindset", "#success", "#hustle", "#entrepreneur", "#motivationalquotes", "#believe"],
+    "mid": ["#selfimprovement", "#growthmindset", "#dailymotivation", "#positivevibes", "#mindsetiseverything", "#goalsetter", "#discipline", "#grind"],
+    "niche": ["#motivationreels", "#successmindset", "#mindfulness", "#personaldevelopment", "#selfgrowth", "#lifecoach", "#wealthmindset", "#inspirationdaily"],
+    "viral": ["#viral", "#reels", "#trending", "#explore", "#explorepage", "#reelsviral", "#instareels", "#viralreels"]
+  },
+
+  "education": {
+    "trending": ["#education", "#learning", "#student", "#study", "#knowledge", "#facts", "#didyouknow", "#learnontiktok"],
+    "mid": ["#studytips", "#studymotivation", "#educationmatters", "#funfacts", "#sciencefacts", "#historyfacts", "#englishlearning", "#mathstricks"],
+    "niche": ["#educationreels", "#studyreels", "#learnonreels", "#upsc", "#neetaspirant", "#jee", "#exampreparation", "#career"],
+    "viral": ["#viral", "#reels", "#trending", "#explore", "#explorepage", "#reelsviral", "#instareels", "#viralreels"]
+  },
+
+  "music": {
+    "trending": ["#music", "#musician", "#singer", "#songwriter", "#newmusic", "#musicvideo", "#cover", "#originalmusic"],
+    "mid": ["#musicreels", "#singingreels", "#guitar", "#piano", "#musiclover", "#musicproducer", "#indiemusic", "#liveperformance"],
+    "niche": ["#bollywoodsongs", "#indianmusic", "#desimusic", "#unplugged", "#instrumental", "#vocalcover", "#mashup", "#musicartist"],
+    "viral": ["#viral", "#reels", "#trending", "#explore", "#explorepage", "#reelsviral", "#instareels", "#viralreels"]
+  },
+
+  "default": {
+    "trending": ["#instagood", "#instadaily", "#instagram", "#photooftheday", "#love", "#follow", "#like4like", "#followforfollowback"],
+    "mid": ["#picoftheday", "#instalike", "#beautiful", "#bestoftheday", "#happy", "#amazing", "#instamood", "#all_shots"],
+    "niche": ["#contentcreator", "#creator", "#smallcreator", "#supportsmallcreators", "#contentcreation", "#creatoreconomy", "#newcreator"],
+    "viral": ["#viral", "#reels", "#trending", "#explore", "#explorepage", "#reelsviral", "#instareels", "#viralreels"]
+  }
+}

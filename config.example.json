@@ -1,0 +1,58 @@
+{
+  "_comment": "RENAME THIS FILE TO config.json and fill in your real values. Never share this file - it contains tokens.",
+
+  "pages": [
+    {
+      "name": "Page 1",
+      "folder": "videos/page1",
+      "ig_user_id": "REPLACE_WITH_YOUR_INSTAGRAM_BUSINESS_ACCOUNT_ID",
+      "access_token": "REPLACE_WITH_YOUR_LONG_LIVED_ACCESS_TOKEN",
+      "niche": "fitness",
+      "caption_style": "energetic",
+      "default_cta": "Follow @yourpage for daily tips!",
+      "hashtag_count": 25,
+      "post_as_reel": true
+    },
+    {
+      "name": "Page 2",
+      "folder": "videos/page2",
+      "ig_user_id": "REPLACE_WITH_YOUR_INSTAGRAM_BUSINESS_ACCOUNT_ID",
+      "access_token": "REPLACE_WITH_YOUR_LONG_LIVED_ACCESS_TOKEN",
+      "niche": "food",
+      "caption_style": "friendly",
+      "default_cta": "Save this recipe!",
+      "hashtag_count": 25,
+      "post_as_reel": true
+    },
+    {
+      "name": "Page 3",
+      "folder": "videos/page3",
+      "ig_user_id": "REPLACE_WITH_YOUR_INSTAGRAM_BUSINESS_ACCOUNT_ID",
+      "access_token": "REPLACE_WITH_YOUR_LONG_LIVED_ACCESS_TOKEN",
+      "niche": "fashion",
+      "caption_style": "trendy",
+      "default_cta": "Tag a friend who needs this fit!",
+      "hashtag_count": 25,
+      "post_as_reel": true
+    },
+    {
+      "name": "Page 4",
+      "folder": "videos/page4",
+      "ig_user_id": "REPLACE_WITH_YOUR_INSTAGRAM_BUSINESS_ACCOUNT_ID",
+      "access_token": "REPLACE_WITH_YOUR_LONG_LIVED_ACCESS_TOKEN",
+      "niche": "comedy",
+      "caption_style": "funny",
+      "default_cta": "Share with someone who needs a laugh!",
+      "hashtag_count": 25,
+      "post_as_reel": true
+    }
+  ],
+
+  "settings": {
+    "watch_interval_seconds": 30,
+    "video_host_method": "fileio",
+    "min_delay_between_posts_seconds": 60,
+    "move_after_post": true,
+    "log_file": "output/post_log.csv"
+  }
+}

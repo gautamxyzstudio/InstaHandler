@@ -1,0 +1,40 @@
+# docker-compose.yml — for Dokploy "Compose" deployments
+#
+# In Dokploy:
+#   1. Create a new project, choose "Compose"
+#   2. Paste this file (or point to it from a connected Git repo)
+#   3. Set the environment variables in Dokploy's "Environment" tab:
+#        PUBLIC_BASE_URL=https://mozart.yourdomain.com
+#        APP_USERNAME=youruser
+#        APP_PASSWORD=long-random-string
+#        FLASK_SECRET_KEY=another-long-random-string
+#   4. In Dokploy's "Domains" tab, add mozart.yourdomain.com -> container port 5050.
+#      Dokploy/Traefik will terminate HTTPS automatically.
+
+services:
+  mozart:
+    build: .
+    # If you push a prebuilt image instead, replace `build: .` with:
+    #   image: ghcr.io/yourname/mozart-insta-handler:latest
+    container_name: mozart_insta_handler
+    restart: unless-stopped
+    ports:
+      - "5050:5050"   # Dokploy will route from your domain to this internal port
+    environment:
+      PUBLIC_BASE_URL:  ${PUBLIC_BASE_URL:-http://localhost:5050}
+      APP_USERNAME:     ${APP_USERNAME}
+      APP_PASSWORD:     ${APP_PASSWORD}
+      FLASK_SECRET_KEY: ${FLASK_SECRET_KEY}
+      DATA_DIR:         /data
+      TZ:               ${TZ:-Asia/Kolkata}
+    volumes:
+      - mozart_data:/data    # persists config.json, uploads/, output/post_log.json
+    healthcheck:
+      test: ["CMD", "curl", "-fsS", "http://127.0.0.1:5050/healthz"]
+      interval: 30s
+      timeout: 5s
+      retries: 3
+      start_period: 10s
+
+volumes:
+  mozart_data:

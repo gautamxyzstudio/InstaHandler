@@ -1,0 +1,7 @@
+{
+  "brands": [],
+  "settings": {
+    "video_host_method": "fileio",
+    "min_delay_between_posts_seconds": 60
+  }
+}
